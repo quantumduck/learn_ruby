@@ -1,5 +1,7 @@
 def translate(str)
-  translate_word(str)
+  result = ""
+  str.split.each { |w| result += translate_word(w) + ' ' }
+  result = result[0, (result.length - 1)]
 end
 
 def translate_word(str)

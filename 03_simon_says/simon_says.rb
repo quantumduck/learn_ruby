@@ -22,11 +22,27 @@ def first_word(str)
 end
 
 def titleize(str)
-  str.capitalize
-end
-
-def test_titleize_title_case(str)
-  result = str.first_word.capitalize
-  str.split[1, str.split.length].each { |s| result += ' ' + s.capitalize }
+  result = str.split.first.capitalize
+  while (str.split.length >= 2)
+    str = str.split(nil, 2)[1]
+    case first_word(str)
+    when 'the'
+      result += ' ' + str.split.first
+    when 'to'
+      result += ' ' + str.split.first
+    when 'a'
+      result += ' ' + str.split.first
+    when 'over'
+      result += ' ' + str.split.first
+    when 'from'
+      result += ' ' + str.split.first
+    when 'is'
+      result += ' ' + str.split.first
+    when 'and'
+      result += ' ' + str.split.first
+    else
+      result += ' ' + str.split.first.capitalize
+    end
+  end
   result
 end
